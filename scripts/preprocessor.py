@@ -11,8 +11,8 @@ def load_and_prepare_data(input_path):
     """Load the data and prepare it by grouping chapters and removing unimportant columns."""
     df = pd.read_csv(input_path)
     df['title'] = df['book_id'].apply(lambda x: x.split('.')[0])
-    df = df.groupby('title')['summary'].apply(' '.join).reset_index()
-    return df
+    df_grouped = df.groupby(['title', 'book_id'])['summary'].apply(' '.join).reset_index()
+    return df_grouped
 
 def remove_stopwords(df):
     """Remove English stopwords from the summary column."""
