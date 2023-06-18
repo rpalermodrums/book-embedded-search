@@ -4,6 +4,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet
 import nltk
+import numpy as np
 
 def reduce_verbosity(input_path, output_path):
     nltk.download('punkt')
