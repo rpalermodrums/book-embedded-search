@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.spatial.distance import cdist
 from openai.embeddings_utils import get_embedding
+import numpy as np
 
 def search_books(query):
     """Search books based on a query and print the titles of the top 3 most similar books."""
