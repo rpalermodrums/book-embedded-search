@@ -25,3 +25,10 @@ pip install pandas scikit-learn nltk tiktoken openai datasets scipy
 
 Please make sure that the necessary files ('raw_data.csv', 'processed_data.csv', 'minimal_processed_data.csv', 'book_summaries_with_embeddings.csv') are in the same directory as the scripts. If your file paths are different, you will need to update these paths in the scripts.
 
+## TODO
+* In preprocessing, collapse all rows by title up to the first ".", then append all words to make one row.
+* Remove duplicate embeddings between modules, especially embedding_generator.py and book_searcher.py
+* Make book_searcher.py as fast as possible as it's the user-facing element
+* Make this generally smarter...
+* QA
+* Dockerize
