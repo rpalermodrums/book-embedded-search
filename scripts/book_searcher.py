@@ -20,7 +20,9 @@ def calculate_embedding(query):
 
 def calculate_similarities(df, query_embedding):
     """Calculate the cosine similarity between the query and the embeddings of each book."""
-    df['similarity'] = 1 - cdist(df['embedding'].tolist(), [query_embedding], 'cosine')
+    embeddings = np.array(df['embedding'].tolist())
+    query_embedding = np.array(query_embedding)
+    df['similarity'] = 1 - cdist(df['embedding'], [query_embedding], 'cosine')
     return df.sort_values(by='similarity', ascending=False)
 
 def print_top_books(df):
