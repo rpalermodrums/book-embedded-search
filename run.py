@@ -1,8 +1,4 @@
-import data_downloader
-import preprocessor
-import verbosity_reducer
-import embedding_generator
-import book_searcher
+from scripts import data_downloader, preprocessor, verbosity_reducer, embedding_generator, book_searcher
 
 def run():
     """Run all scripts to download the dataset, preprocess it, generate embeddings, and search the books."""

@@ -47,7 +47,7 @@ def get_top_keywords(summary, vectorizer, feature_array):
     return [feature_array[i] for i in tfidf_sorting[:10]]
 
 def save_data(df, output_path):
-    df.to_csv(output_path, index=False)
+    df.to_csv(output_path, index=False, columns=['book_id', 'summary'])
 
 if __name__ == "__main__":
     reduce_verbosity('processed_data.csv', 'minimal_processed_data.csv')
